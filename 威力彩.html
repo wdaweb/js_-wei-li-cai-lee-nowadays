@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // const randA = () => {
+    //     array = []
+    //     for (let i = 0 i < 6 i++) {
+    //         n = Math.floor(Math.random() * 38)+1 
+    //         if (array.indexOf(n) >= 0) {
+    //             i --
+    //         } else {
+    //             array.push(n)
+    //         }
+    //     }
+    //     return array
+    // }
+
+    // const randB = () => {
+    //     return Math.floor(Math.random() * 8)+1 
+    // }
+
+    // document.write(" A區 " + randA() + "<br>")
+    // document.write(" B區 " + randB())
+
+    const rand = (min, max) => {
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
+    // 第一個方法
+    // for(let i=1;i<6;i++){
+    //     const num=rand(1,38)
+    //     if(a.includes(num)){
+    //         i--
+    //     }else{
+    //         a.push(num)
+    //     }
+    // }
+
+    // 第二個方法
+    // while(a.length<6){
+    //     const num = rand(1,38)
+    //     if(!a.includes(num)){
+    //         a.push(num)
+    //     }
+    // }
+    // 第三個方法
+    // 先建立球池
+    const numbers = []
+    // 把球放進去
+    for (let i = 1; i <= 38; i++) {
+        numbers.push(i)
+    }
+    for (let i = 0; i < 6; i++) {
+        // 隨機取出一顆球
+        const index = rand(0, numbers.length - 1)
+        // 把取出的球放進去
+        a.push(number[index])
+        // 把取出的球從球池中移除
+        numbers.splice(index, 1)
+    }
+
+
+    document.write(a.join(', ') + '<br>')
+    document.write(rand(1, 8))
+</script>
+</body>
+</html>
